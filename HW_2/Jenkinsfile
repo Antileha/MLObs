@@ -12,27 +12,34 @@ pipeline
                 //Установка зависимостей, если это необходимо
                 }
             }
-        stage('Download Data')
+        stage('Data creation')
             {
             steps
                 {
-                sh 'python3 scripts/download_data.py'
+                sh 'python3 HW_2/data_creation.py'
                 }
             }
         stage('Preprocess Data')
             {
             steps
                 {
-                sh 'python3 scripts/preprocess.py'
+                sh 'python3 HW_2/model_preprocessing.py'
                 }
             }
-        stage('Train Model')
+        stage('Preparation Model')
             {
             steps
                 {
-                sh 'python3 scripts/train_model.py'
+                sh 'python3 HW_2/model_preparation.py'
                 }
             }
+//         stage('Train Model')
+//             {
+//             steps
+//                 {
+//                 sh 'python3 scripts/train_model.py'
+//                 }
+//             }
         }
         post
             {
