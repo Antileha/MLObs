@@ -1,5 +1,5 @@
-# Используем официальный образ Jenkins
-FROM jenkins/jenkins:lst
+# Используем официальный образ Jenkins#-jdk17
+FROM jenkins/jenkins:lst 
 
 # Переключаемся на пользователя root для учтановки пакетов
 USER root
